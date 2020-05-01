@@ -196,7 +196,7 @@ class Reader(object):
                     #   Identify and save where we are
                     location = channel_data[channel_name].index(message)
                     reply_list = []
-                    for reply in message._message['replies']:
+                    for reply in message._message.get('replies', []):
                         reply_list.append(reply)
                     reply_objects = []
                     for item in reply_list:
